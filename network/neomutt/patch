@@ -1,0 +1,16 @@
+--- mutt-1.7.2/imap/imap.c      2016-12-05 00:46:59.000000000 +0100
++++ mutt-patched/imap/imap.c    2019-02-21 22:14:24.087984630 +0100
+@@ -1678,1 +1678,1 @@
+-  mutt_buffer_addstr(&buf, "UID SEARCH ");
++  mutt_buffer_addstr(&buf, "UID SEARCH FUZZY ");
+--- neomutt-20200320/imap/command.c	2020-03-20 14:10:31.000000000 +0100
++++ neomutt-20200320-patched/imap/command.c	2020-03-21 11:36:57.823013051 +0100
+@@ -920,7 +920,7 @@
+     else if ((olduv == 0) && (oldun == 0))
+     {
+       /* first check per session, use recent. might need a flag for this. */
+-      new_mail = (mdata->recent > 0);
++      new_mail = (mdata->recent > 0 && mdata->unseen > 0);
+     }
+     else
+       new_mail = (mdata->unseen > 0);
