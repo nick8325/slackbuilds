@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Slackware build script for cvc4
 
@@ -26,13 +26,10 @@
 # Add new Python bindings (requires a newer version of Cython?)
 # Add Java bindings (requires a newer version of CMake?)
 
-cd $(dirname $0) ; CWD=$(pwd)
-
 PRGNAM=cvc4
 VERSION=${VERSION:-1.8}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_SBo}
-PKGTYPE=${PKGTYPE:-tgz}
 SRCNAM=CVC4
 
 if [ -z "$ARCH" ]; then
@@ -43,14 +40,7 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
-# the name of the created package would be, and then exit. This information
-# could be useful to other scripts.
-if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
-  echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
-  exit 0
-fi
-
+CWD=$(pwd)
 TMP=${TMP:-/tmp/SBo}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
@@ -84,7 +74,11 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+# Respect LIBDIRSUFFIX
 sed -i "s/LIBRARY_INSTALL_DIR lib/&${LIBDIRSUFFIX}/" CMakeLists.txt
+# Respect DESTDIR in Python bindings
+sed -i "s@setup\\.py install@& --root=${PKG}@" src/api/python/CMakeLists.txt
+
 install -m 755 $CWD/run-antlr .
 cp $CWD/antlr-3.4-complete.jar .
 
@@ -96,9 +90,10 @@ cmake \
   -DANTLR_INCLUDE_DIR=/usr/include/antlr3 \
   -DANTLR_BINARY="$TMP/$SRCNAM-$VERSION/run-antlr" \
   -DUSE_READLINE=OFF \
-  -DBUILD_BINDINGS_PYTHON=OFF \
+  -DBUILD_BINDINGS_PYTHON=ON \
   -DBUILD_SWIG_BINDINGS_PYTHON=ON \
-  -DBUILD_SWIG_BINDINGS_JAVA=OFF \
+  -DBUILD_SWIG_BINDINGS_JAVA=ON \
+  -DUSE_PYTHON3=ON \
   .
 
 make
@@ -122,4 +117,4 @@ mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
