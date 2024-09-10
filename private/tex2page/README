@@ -1,0 +1,6 @@
+TeX2page is a program for converting TeX to HTML.
+
+To use it, you will need to have the following packages installed:
+  * texlive, from SlackBuilds
+  * guile
+  * ghostscript

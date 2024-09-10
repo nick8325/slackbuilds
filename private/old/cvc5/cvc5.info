@@ -1,0 +1,12 @@
+PRGNAM="cvc5"
+VERSION="1.0.2"
+HOMEPAGE="https://cvc5.cs.stanford.edu/"
+DOWNLOAD="https://github.com/cvc5/cvc5/archive/cvc5-1.0.2/cvc5-1.0.2.tar.gz \
+          https://www.antlr3.org/download/antlr-3.4-complete.jar"
+MD5SUM="10ae2c7b00fe733f8a367fa6f5dfb614 \
+        1b91dea1c7d480b3223f7c8a9aa0e172"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="jdk libantlr3c python-toml cadical"
+MAINTAINER="Nick Smallbone"
+EMAIL="nick@smallbone.se"

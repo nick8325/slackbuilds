@@ -1,0 +1,13 @@
+Lean is an interactive theorem prover based on dependent type theory.
+It features a high level of automation compared to competing systems
+such as Coq and Agda.
+
+Lean's documentation lives online:
+
+* Theorem Proving in Lean:
+  https://leanprover.github.io/theorem_proving_in_lean/
+* The Lean Reference Manual:
+  https://leanprover.github.io/reference/
+
+If you are using Emacs, you will want to install the lean Emacs mode,
+via M-x package-install RET lean-mode RET.

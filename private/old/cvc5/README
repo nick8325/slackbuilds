@@ -1,0 +1,11 @@
+CVC5 is an automated theorem prover and satisfiability modulo theories
+(SMT) solver. Given a formula in first-order logic, it attempts to
+either prove the formula or find a counterexample. CVC4 supports
+arithmetic, reasoning about arrays, and several other built-in
+theories. Input problems are written in SMT-LIB format.
+
+This package includes the cvc5 program, libraries, and Python 3
+bindings.
+
+Note that this SlackBuild builds CVC5 with readline support, which means
+the resulting executable is licensed under the GPLv3.

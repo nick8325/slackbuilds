@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+        |-----handy-ruler------------------------------------------------------|
+tex2page: TeX2page is a program for converting TeX to HTML.
+tex2page: 
+tex2page: To use it, you will need to have the following packages installed:
+tex2page:   * texlive, from SlackBuilds
+tex2page:   * tetex or texlive
+tex2page:   * ghostscript
+tex2page:
+tex2page:
+tex2page:
+tex2page:
+tex2page:

@@ -1,0 +1,5 @@
+Zarith is an OCaml library for arbitrary-precision arithmetic.
+It provides arbitrary-precision integers ("bignums")
+and rational numbers.
+
+Zarith is a replacement for the earlier Num library.

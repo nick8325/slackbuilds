@@ -1,0 +1,12 @@
+CorsixTH: yes (done)
+swi-prolog: yes (done)
+z3: yes (done)
+xfce4-datetime-plugin: yes (done)
+quodlibet: yes (done)
+
+eprover: yes - wait for latest version
+
+cvc5: no, too hard to package
+coq: no, coqide no longer available
+ocaml-num: no
+python-faulthandler: no updates
