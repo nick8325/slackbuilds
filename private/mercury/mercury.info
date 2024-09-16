@@ -1,6 +1,6 @@
 PRGNAM="mercury"
 VERSION="22.01.8"
-HOMEPAGE="homepage of application"
+HOMEPAGE="https://www.mercurylang.org/"
 DOWNLOAD="http://dl.mercurylang.org/release/mercury-srcdist-22.01.8.tar.xz"
 MD5SUM="b09efdd6461663cca30af7d353899d48"
 DOWNLOAD_x86_64=""

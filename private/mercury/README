@@ -1,1 +1,3 @@
-xx
+Mercury is a logic programming language. The syntax and semantics is
+similar to Prolog but unlike Prolog it is strongly typed and compiles
+to efficient machine code.
