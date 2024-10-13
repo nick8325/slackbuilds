@@ -111,7 +111,7 @@ cp tools/dochack/dochack.js $PKG/usr/lib/nim/tools/dochack/
 cp tools/debug/nim-gdb.py $PKG/usr/lib/nim/tools/
 
 # Install the compiler and dependencies
-cp -r compiler $PKG/usr/lib/nim/lib
+cp -r compiler $PKG/usr/lib/nim/lib # TODO this also installs nim and nim1 binaries
 cp nim.nimble $PKG/usr/lib/nim/lib/compiler
 mkdir -p $PKG/usr/lib/nim/lib/dist
 cp -r dist/checksums $PKG/usr/lib/nim/lib/dist
